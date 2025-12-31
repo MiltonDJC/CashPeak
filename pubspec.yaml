@@ -9,6 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
   flutter_launcher_icons: ^0.14.4
 
 flutter_launcher_icons:
@@ -17,10 +22,7 @@ flutter_launcher_icons:
   image_path: "assets/images/cashpeak.png"
   adaptive_icon_background: "#ffffff"
 
-dev_dependencies:
-  flutter_lints: ^6.0.0
-  flutter_test:
-    sdk: flutter
-
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
