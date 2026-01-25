@@ -12,7 +12,14 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Cash Peak')),
+        appBar: AppBar(
+          title: const Text(
+            'Cash Peak',
+            style: TextStyle(fontSize: 48, color: Colors.black),
+          ),
+          toolbarHeight: 300,
+          centerTitle: true,
+        ),
         body: const HomePage(),
       ),
       title: 'Cash Peak',
