@@ -10,15 +10,24 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CustomButton(typeOfAction: 'Registrar Gasto', actionOfButton: () {}),
-          const SizedBox(height: 32),
           CustomButton(
             typeOfAction: 'Registrar Ingreso',
+            buttonBackgroundColor: Colors.green,
             actionOfButton: () {},
           ),
           const SizedBox(height: 32),
-          CustomButton(typeOfAction: 'Registros', actionOfButton: () {}),
-          const SizedBox(height: 16),
+          CustomButton(
+            typeOfAction: 'Registrar Gasto',
+            buttonBackgroundColor: Colors.red,
+            actionOfButton: () {},
+          ),
+          const SizedBox(height: 32),
+          CustomButton(
+            typeOfAction: 'Registros',
+            buttonBackgroundColor: Colors.grey,
+            actionOfButton: () {},
+          ),
+          const SizedBox(height: 200),
         ],
       ),
     );
