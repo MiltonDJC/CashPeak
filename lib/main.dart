@@ -1,4 +1,4 @@
-import 'package:cashpeak/ui/screens/home_page.dart';
+import 'package:cashpeak/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
           toolbarHeight: 300,
           centerTitle: true,
         ),
-        body: const HomePage(),
+        body: const HomeScreen(),
       ),
       title: 'Cash Peak',
       debugShowCheckedModeBanner: false,
