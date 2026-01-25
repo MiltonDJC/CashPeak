@@ -10,8 +10,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: HomePage()),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Cash Peak')),
+        body: const HomePage(),
+      ),
       title: 'Cash Peak',
       debugShowCheckedModeBanner: false,
     );
