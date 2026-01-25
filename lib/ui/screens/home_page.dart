@@ -1,3 +1,4 @@
+import 'package:cashpeak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,6 +6,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Hello world'));
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CustomButton(typeOfAction: 'Registrar Gasto', actionOfButton: () {}),
+          const SizedBox(height: 32),
+          CustomButton(
+            typeOfAction: 'Registrar Ingreso',
+            actionOfButton: () {},
+          ),
+          const SizedBox(height: 32),
+          CustomButton(typeOfAction: 'Registros', actionOfButton: () {}),
+        ],
+      ),
+    );
   }
 }
