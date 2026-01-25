@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           CustomButton(typeOfAction: 'Registros', actionOfButton: () {}),
+          const SizedBox(height: 16),
         ],
       ),
     );
