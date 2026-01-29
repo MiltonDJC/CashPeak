@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(height: 32),
           CustomButton(
             typeOfAction: 'Registros',
-            buttonBackgroundColor: Colors.grey,
+            buttonBackgroundColor: Colors.blue,
             actionOfButton: () {},
           ),
           const SizedBox(height: 200),
