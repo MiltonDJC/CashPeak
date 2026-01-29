@@ -1,3 +1,4 @@
+import 'package:cashpeak/ui/screens/log_income_screen.dart';
 import 'package:cashpeak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,12 @@ class HomeScreen extends StatelessWidget {
           CustomButton(
             typeOfAction: 'Registrar Ingreso',
             buttonBackgroundColor: Colors.green,
-            actionOfButton: () {},
+            actionOfButton: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const LogIncomeScreen()),
+              );
+            },
           ),
           const SizedBox(height: 32),
           CustomButton(
