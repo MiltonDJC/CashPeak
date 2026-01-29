@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButton extends StatefulWidget {
   const CustomButton({
     super.key,
     required this.typeOfAction,
@@ -13,17 +13,22 @@ class CustomButton extends StatelessWidget {
   final Color buttonBackgroundColor;
 
   @override
+  State<CustomButton> createState() => _CustomButtonState();
+}
+
+class _CustomButtonState extends State<CustomButton> {
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: buttonBackgroundColor,
+        backgroundColor: widget.buttonBackgroundColor,
         minimumSize: const Size(236, 80),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         foregroundColor: Colors.black,
         textStyle: const TextStyle(fontSize: 24),
       ),
-      onPressed: actionOfButton,
-      child: Text(typeOfAction),
+      onPressed: widget.actionOfButton,
+      child: Text(widget.typeOfAction),
     );
   }
 }
