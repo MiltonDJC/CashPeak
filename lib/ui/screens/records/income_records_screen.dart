@@ -27,27 +27,67 @@ class IncomeRecordsScreen extends StatelessWidget {
                 side: BorderSide(color: Colors.black),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 80,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const SizedBox(height: 100, width: 50),
-                  Text(
-                    'Fecha: ${incomeProvider.incomes[index].date.day}/${incomeProvider.incomes[index].date.month}/${incomeProvider.incomes[index].date.year}\nNombre: ${incomeProvider.incomes[index].name.toUpperCase()}\nMonto: \$${incomeProvider.incomes[index].incomeAmount}',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Text(
+                          'Fecha: ${incomeProvider.incomes[index].date.day}/${incomeProvider.incomes[index].date.month}/${incomeProvider.incomes[index].date.year}\nNombre: ${incomeProvider.incomes[index].name.toUpperCase()}\nMonto: \$${incomeProvider.incomes[index].incomeAmount}',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.delete_forever, color: Colors.red),
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          incomeProvider.removeIncome(
+                            incomeProvider.incomes[index],
+                            incomeProvider.incomes[index].name,
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.delete_forever,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           );
         },
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 50),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          border: Border(top: BorderSide(color: Colors.grey)),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Total de ingresos:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              '\$${incomeProvider.totalIncomeAmount}',
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
