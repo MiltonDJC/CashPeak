@@ -53,7 +53,7 @@ class _CustomButtonState extends State<CustomButton> {
         textStyle: const TextStyle(fontSize: 24),
       ),
       onPressed: buttonExecuted,
-      child: Text(widget.typeOfAction),
+      child: Text(widget.typeOfAction, textAlign: TextAlign.center),
     );
   }
 }
