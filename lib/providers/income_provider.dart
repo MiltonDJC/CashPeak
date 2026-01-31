@@ -14,4 +14,11 @@ class IncomeProvider extends ChangeNotifier {
     _incomes.add(newIncome);
     notifyListeners();
   }
+
+  int get totalIncomeAmount {
+    return _incomes.fold<int>(
+      0,
+      (total, income) => total + income.incomeAmount,
+    );
+  }
 }
