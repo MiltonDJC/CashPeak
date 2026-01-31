@@ -1,4 +1,5 @@
 import 'package:cashpeak/ui/screens/log_income_screen.dart';
+import 'package:cashpeak/ui/screens/records_screen.dart';
 import 'package:cashpeak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,12 @@ class HomeScreen extends StatelessWidget {
           CustomButton(
             typeOfAction: 'Registros',
             buttonBackgroundColor: Colors.blue,
-            actionOfButton: () {},
+            actionOfButton: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const RecordsScreen()),
+              );
+            },
           ),
           const SizedBox(height: 200),
         ],
