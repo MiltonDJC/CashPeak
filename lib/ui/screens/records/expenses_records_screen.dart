@@ -12,6 +12,7 @@ class ExpensesRecordsScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
         ),
         title: const Text('Gastos registrados'),
+        centerTitle: true,
       ),
     );
   }
