@@ -46,3 +46,4 @@ app.*.map.json
 
 #Files to ignore
 docs/todo.txt
+devtools_options.yaml
