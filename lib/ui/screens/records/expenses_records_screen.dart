@@ -49,7 +49,7 @@ class ExpensesRecordsScreen extends StatelessWidget {
                         onPressed: () {
                           expenseProvider.removeExpense(
                             expenseProvider.expenses[index],
-                            expenseProvider.expenses[index].name,
+                            expenseProvider.expenses[index].expenseIndex,
                           );
                         },
                         icon: const Icon(
