@@ -8,7 +8,7 @@ class ExpenseProvider extends ChangeNotifier {
 
   List<Expense> get expenses => List.unmodifiable(_expenses);
 
-  void addexpense(Expense expenseToBeAdded) {
+  void addExpense(Expense expenseToBeAdded) {
     Expense newExpense = Expense(
       expenseIndex: expenseIndex,
       date: expenseToBeAdded.date,
