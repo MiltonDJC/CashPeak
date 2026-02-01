@@ -1,3 +1,4 @@
+import 'package:cashpeak/ui/screens/log_expense_screen.dart';
 import 'package:cashpeak/ui/screens/log_income_screen.dart';
 import 'package:cashpeak/ui/screens/records_screen.dart';
 import 'package:cashpeak/ui/widgets/custom_button.dart';
@@ -26,7 +27,12 @@ class HomeScreen extends StatelessWidget {
           CustomButton(
             typeOfAction: 'Registrar Gasto',
             buttonBackgroundColor: Colors.red,
-            actionOfButton: () {},
+            actionOfButton: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const LogExpenseScreen()),
+              );
+            },
           ),
           const SizedBox(height: 32),
           CustomButton(
