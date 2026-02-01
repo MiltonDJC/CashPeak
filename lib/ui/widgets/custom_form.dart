@@ -1,5 +1,8 @@
+import 'package:cashpeak/data/models/income.dart';
+import 'package:cashpeak/providers/income_provider.dart';
 import 'package:cashpeak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomForm extends StatefulWidget {
   const CustomForm({super.key});
@@ -9,8 +12,20 @@ class CustomForm extends StatefulWidget {
 }
 
 class _CustomFormState extends State<CustomForm> {
+  final incomeAmountController = TextEditingController();
+  final incomeNameController = TextEditingController();
+
+  @override
+  void dispose() {
+    incomeAmountController.dispose();
+    incomeNameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final incomeProvider = context.watch<IncomeProvider>();
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -27,6 +42,7 @@ class _CustomFormState extends State<CustomForm> {
                         child: SizedBox(
                           width: 300,
                           child: TextFormField(
+                            controller: incomeAmountController,
                             decoration: const InputDecoration(
                               labelText: 'Ingreso',
                               prefixText: '\$',
@@ -40,6 +56,7 @@ class _CustomFormState extends State<CustomForm> {
                         child: SizedBox(
                           width: 300,
                           child: TextFormField(
+                            controller: incomeNameController,
                             decoration: const InputDecoration(
                               labelText: 'Nombre',
                             ),
@@ -70,7 +87,20 @@ class _CustomFormState extends State<CustomForm> {
             CustomButton(
               typeOfAction: 'Añadir',
               buttonBackgroundColor: Colors.green,
-              actionOfButton: () {},
+              actionOfButton: () {
+                if (incomeNameController.text.isEmpty ||
+                    incomeAmountController.text.isEmpty) {
+                  return;
+                } else {
+                  incomeProvider.addIncome(
+                    Income(
+                      date: DateTime.now(),
+                      name: incomeNameController.text,
+                      incomeAmount: int.parse(incomeAmountController.text),
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),
