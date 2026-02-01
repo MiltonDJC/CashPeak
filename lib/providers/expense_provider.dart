@@ -3,13 +3,24 @@ import 'package:flutter/material.dart';
 
 class ExpenseProvider extends ChangeNotifier {
   final List<Expense> _expenses = [
-    Expense(date: DateTime(2022, 3, 14), name: 'tienda', expenseAmount: 100),
     Expense(
+      expenseIndex: 0,
+      date: DateTime(2022, 3, 14),
+      name: 'tienda',
+      expenseAmount: 100,
+    ),
+    Expense(
+      expenseIndex: 1,
       date: DateTime(2022, 3, 14),
       name: 'super mercado',
       expenseAmount: 100,
     ),
-    Expense(date: DateTime(2022, 3, 14), name: 'mencanico', expenseAmount: 100),
+    Expense(
+      expenseIndex: 2,
+      date: DateTime(2022, 3, 14),
+      name: 'mencanico',
+      expenseAmount: 100,
+    ),
   ];
 
   List<Expense> get expenses => List.unmodifiable(_expenses);
@@ -19,8 +30,10 @@ class ExpenseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeExpense(Expense expenseToRemove, String name) {
-    _expenses.removeWhere((expenseToRemove) => expenseToRemove.name == name);
+  void removeExpense(Expense expenseToRemove, int index) {
+    _expenses.removeWhere(
+      (expenseToRemove) => expenseToRemove.expenseIndex == index,
+    );
     notifyListeners();
   }
 
