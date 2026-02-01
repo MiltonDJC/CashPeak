@@ -2,22 +2,31 @@ import 'package:cashpeak/data/models/income.dart';
 import 'package:flutter/material.dart';
 
 class IncomeProvider extends ChangeNotifier {
-  int incomeIndex = 0;
-
-  final List<Income> _incomes = [];
+  final List<Income> _incomes = [
+    Income(
+      incomeIndex: 0,
+      date: DateTime(2022, 3, 14),
+      name: 'tienda',
+      incomeAmount: 100,
+    ),
+    Income(
+      incomeIndex: 1,
+      date: DateTime(2022, 3, 14),
+      name: 'tienda',
+      incomeAmount: 100,
+    ),
+    Income(
+      incomeIndex: 2,
+      date: DateTime(2022, 3, 14),
+      name: 'supermercado',
+      incomeAmount: 100,
+    ),
+  ];
 
   List<Income> get incomes => List.unmodifiable(_incomes);
 
-  void addIncome(Income incomeToBeAdded) {
-    Income newIncome = Income(
-      incomeIndex: incomeIndex,
-      date: incomeToBeAdded.date,
-      name: incomeToBeAdded.name,
-      incomeAmount: incomeToBeAdded.incomeAmount,
-    );
-
+  void addIncome(Income newIncome) {
     _incomes.add(newIncome);
-    incomeIndex++;
     notifyListeners();
   }
 
