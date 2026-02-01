@@ -1,4 +1,4 @@
-import 'package:cashpeak/ui/widgets/custom_form.dart';
+import 'package:cashpeak/ui/widgets/custom_income_form.dart';
 import 'package:flutter/material.dart';
 
 class LogIncomeScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _LogIncomeScreenState extends State<LogIncomeScreen> {
         title: const Text('Registrar ingreso'),
         centerTitle: true,
       ),
-      body: const CustomForm(),
+      body: const CustomIncomeForm(),
     );
   }
 }
