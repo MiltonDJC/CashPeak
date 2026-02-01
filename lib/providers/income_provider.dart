@@ -12,13 +12,13 @@ class IncomeProvider extends ChangeNotifier {
     Income(
       incomeIndex: 1,
       date: DateTime(2022, 3, 14),
-      name: 'super mercado',
+      name: 'tienda',
       incomeAmount: 100,
     ),
     Income(
       incomeIndex: 2,
       date: DateTime(2022, 3, 14),
-      name: 'mencanico',
+      name: 'supermercado',
       incomeAmount: 100,
     ),
   ];
