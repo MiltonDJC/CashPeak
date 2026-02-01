@@ -99,6 +99,7 @@ class _CustomExpenseFormState extends State<CustomExpenseForm> {
                       expenseAmount: int.parse(expenseAmountController.text),
                     ),
                   );
+                  Navigator.pop(context);
                 }
               },
             ),

@@ -99,6 +99,7 @@ class _CustomIncomeFormState extends State<CustomIncomeForm> {
                       incomeAmount: int.parse(incomeAmountController.text),
                     ),
                   );
+                  Navigator.pop(context);
                 }
               },
             ),
