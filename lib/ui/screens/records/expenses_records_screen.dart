@@ -79,7 +79,9 @@ class ExpensesRecordsScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
-              '-\$${expenseProvider.totalExpenseAmount}',
+              expenseProvider.totalExpenseAmount != 0
+                  ? '-\$${expenseProvider.totalExpenseAmount}'
+                  : '\$0',
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
