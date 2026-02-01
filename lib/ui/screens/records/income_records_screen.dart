@@ -49,7 +49,7 @@ class IncomeRecordsScreen extends StatelessWidget {
                         onPressed: () {
                           incomeProvider.removeIncome(
                             incomeProvider.incomes[index],
-                            incomeProvider.incomes[index].name,
+                            incomeProvider.incomes[index].incomeIndex,
                           );
                         },
                         icon: const Icon(
