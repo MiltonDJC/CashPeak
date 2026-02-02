@@ -3,7 +3,7 @@ import 'package:hive_ce/hive_ce.dart';
 part 'expense.g.dart';
 
 @HiveType(typeId: 1)
-class Expense {
+class Expense extends HiveObject {
   Expense({
     this.expenseIndex,
     required this.date,
