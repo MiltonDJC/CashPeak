@@ -1,3 +1,5 @@
+import 'package:cashpeak/data/models/expense.dart';
+import 'package:cashpeak/data/models/income.dart';
 import 'package:cashpeak/providers/expense_provider.dart';
 import 'package:cashpeak/providers/income_provider.dart';
 import 'package:cashpeak/ui/screens/home_screen.dart';
@@ -7,8 +9,13 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Hive.initFlutter();
+
+  Hive.registerAdapter(IncomeAdapter());
+  Hive.registerAdapter(ExpenseAdapter());
+
+  await Hive.openBox<Income>('incomes');
+  await Hive.openBox<Expense>('expenses');
 
   runApp(
     MultiProvider(
