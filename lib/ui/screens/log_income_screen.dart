@@ -1,4 +1,4 @@
-import 'package:cashpeak/ui/widgets/custom_income_form.dart';
+import 'package:cash_peak/ui/widgets/custom_income_form.dart';
 import 'package:flutter/material.dart';
 
 class LogIncomeScreen extends StatefulWidget {

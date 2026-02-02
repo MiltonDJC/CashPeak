@@ -1,4 +1,4 @@
-import 'package:cashpeak/data/models/expense.dart';
+import 'package:cash_peak/data/models/expense.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_ce/hive_ce.dart';
 

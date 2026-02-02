@@ -1,7 +1,7 @@
-import 'package:cashpeak/ui/screens/log_expense_screen.dart';
-import 'package:cashpeak/ui/screens/log_income_screen.dart';
-import 'package:cashpeak/ui/screens/records_screen.dart';
-import 'package:cashpeak/ui/widgets/custom_button.dart';
+import 'package:cash_peak/ui/screens/log_expense_screen.dart';
+import 'package:cash_peak/ui/screens/log_income_screen.dart';
+import 'package:cash_peak/ui/screens/records_screen.dart';
+import 'package:cash_peak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

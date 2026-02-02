@@ -1,6 +1,6 @@
-import 'package:cashpeak/ui/screens/records/expenses_records_screen.dart';
-import 'package:cashpeak/ui/screens/records/income_records_screen.dart';
-import 'package:cashpeak/ui/widgets/custom_button.dart';
+import 'package:cash_peak/ui/screens/records/expenses_records_screen.dart';
+import 'package:cash_peak/ui/screens/records/income_records_screen.dart';
+import 'package:cash_peak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class RecordsScreen extends StatelessWidget {

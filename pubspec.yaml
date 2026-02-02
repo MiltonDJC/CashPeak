@@ -1,4 +1,4 @@
-name: cashpeak
+name: cash_peak
 description: "This is a financial application designed for better expense tracking."
 publish_to: 'none'
 version: 0.1.0

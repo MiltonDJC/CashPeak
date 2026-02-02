@@ -3,8 +3,8 @@
 // Check in to version control
 
 import 'package:hive_ce/hive_ce.dart';
-import 'package:cashpeak/data/models/expense.dart';
-import 'package:cashpeak/data/models/income.dart';
+import 'package:cash_peak/data/models/expense.dart';
+import 'package:cash_peak/data/models/income.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {

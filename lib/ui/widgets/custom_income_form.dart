@@ -1,6 +1,6 @@
-import 'package:cashpeak/data/models/income.dart';
-import 'package:cashpeak/providers/income_provider.dart';
-import 'package:cashpeak/ui/widgets/custom_button.dart';
+import 'package:cash_peak/data/models/income.dart';
+import 'package:cash_peak/providers/income_provider.dart';
+import 'package:cash_peak/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
