@@ -1,3 +1,8 @@
+import 'package:hive_ce/hive_ce.dart';
+
+part 'expense.g.dart';
+
+@HiveType(typeId: 1)
 class Expense {
   Expense({
     this.expenseIndex,
@@ -6,8 +11,15 @@ class Expense {
     required this.expenseAmount,
   });
 
+  @HiveField(0)
   final int? expenseIndex;
+
+  @HiveField(1)
   final DateTime date;
+
+  @HiveField(2)
   final String name;
+
+  @HiveField(3)
   final int expenseAmount;
 }
