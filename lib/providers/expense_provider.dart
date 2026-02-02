@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_ce/hive_ce.dart';
 
 class ExpenseProvider extends ChangeNotifier {
-  final Box<Expense> _expenseBox = Hive.box('expenses');
+  final Box<Expense> _expenseBox = Hive.box<Expense>('expenses');
 
   List<Expense> get expenses => _expenseBox.values.toList();
 
@@ -12,8 +12,8 @@ class ExpenseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeExpense(int index) {
-    _expenseBox.deleteAt(index);
+  void removeExpense(Expense expense) {
+    _expenseBox.delete(expense.key);
     notifyListeners();
   }
 

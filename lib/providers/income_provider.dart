@@ -12,8 +12,8 @@ class IncomeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeIncome(int index) {
-    _incomeBox.deleteAt(index);
+  void removeIncome(Income income) {
+    _incomeBox.delete(income.key);
     notifyListeners();
   }
 
