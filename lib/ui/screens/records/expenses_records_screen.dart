@@ -15,7 +15,7 @@ class ExpensesRecordsScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back),
         ),
-        title: const Text('Ingresos registrados'),
+        title: const Text('Gastos registrados'),
         centerTitle: true,
       ),
       body: ListView.builder(
