@@ -48,7 +48,6 @@ class IncomeRecordsScreen extends StatelessWidget {
                       IconButton(
                         onPressed: () {
                           incomeProvider.removeIncome(
-                            incomeProvider.incomes[index],
                             incomeProvider.incomes[index].incomeIndex!,
                           );
                         },
