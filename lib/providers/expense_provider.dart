@@ -1,34 +1,24 @@
 import 'package:cashpeak/data/models/expense.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_ce/hive_ce.dart';
 
 class ExpenseProvider extends ChangeNotifier {
-  int expenseIndex = 0;
+  final Box<Expense> _expenseBox = Hive.box('expenses');
 
-  final List<Expense> _expenses = [];
+  List<Expense> get expenses => _expenseBox.values.toList();
 
-  List<Expense> get expenses => List.unmodifiable(_expenses);
-
-  void addExpense(Expense expenseToBeAdded) {
-    Expense newExpense = Expense(
-      expenseIndex: expenseIndex,
-      date: expenseToBeAdded.date,
-      name: expenseToBeAdded.name,
-      expenseAmount: expenseToBeAdded.expenseAmount,
-    );
-    _expenses.add(newExpense);
-    expenseIndex++;
+  void addExpense(Expense expense) {
+    _expenseBox.add(expense);
     notifyListeners();
   }
 
-  void removeExpense(Expense expenseToRemove, int index) {
-    _expenses.removeWhere(
-      (expenseToRemove) => expenseToRemove.expenseIndex == index,
-    );
+  void removeExpense(int index) {
+    _expenseBox.deleteAt(index);
     notifyListeners();
   }
 
   int get totalExpenseAmount {
-    return _expenses.fold<int>(
+    return expenses.fold<int>(
       0,
       (total, expense) => total + expense.expenseAmount,
     );
